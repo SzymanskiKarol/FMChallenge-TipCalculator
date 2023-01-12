@@ -1,0 +1,230 @@
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+body {
+    background-color: var(--Light-grayish-cyan);
+    min-height: 100vh;
+}
+
+.logo {
+    width: 100px;
+}
+
+main {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.container {
+    background-color: var(--White);
+    padding: 2rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+
+.left-section {
+    padding: 10px;
+}
+
+.right-section {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 30px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+input {
+    background-color: var(--Very-light-grayish-cyan);
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    position: relative;
+    padding: 0 10px;
+    text-align: right;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+input::placeholder {
+    text-align: right;
+}
+
+#custom {
+    width: 110px;
+    cursor: pointer;
+}
+
+#custom::placeholder {
+    font-size: 1.25rem;
+}
+
+.btn {
+    width: 110px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--White);
+    background-color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+
+.btn:focus {
+    background-color: var(--Strong-cyan);
+}
+
+.active:not(input) {
+    background-color: var(--Strong-cyan);
+}
+
+input.active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--Strong-cyan);
+    color: var(--Strong-cyan);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--Dark-grayish-cyan);
+    margin-bottom: 0.5rem;
+}
+
+
+.first-row,
+.third-row {
+    position: relative;
+}
+
+.second-row {
+    margin: 2.5rem 0;
+}
+
+.icon {
+    z-index: 100;
+    position: absolute;
+    bottom: 17px;
+    left: 10px;
+}
+
+
+
+.tip-box,
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+
+h3 {
+    color: var(--White);
+    font-size: 1rem;
+}
+
+.person {
+    margin: 0;
+    font-size: .75rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--Strong-cyan);
+}
+
+.reset {
+    font-size: 1.25rem;
+    color: var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan);
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.reset:hover {
+    background-color: hsl(172, 92%, 62%);
+}
+
+.reset:disabled {
+    background-color: var(--Dark-grayish-cyan);
+    opacity: 0.6;
+}
+
+
+input:focus {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--Strong-cyan);
+    outline: none;
+}
+
+@media (max-width: 900px) and (min-width: 761px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 0.625rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    #custom {
+        width: 100%;
+    }
+}

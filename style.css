@@ -73,7 +73,7 @@ input {
     position: relative;
     padding: 0 10px;
     text-align: right;
-    width: 100%;
+    width: 350px;
     font-size: 1.5rem;
 }
 
@@ -208,6 +208,12 @@ input:focus {
     .container {
         display: flex;
         flex-direction: column;
+        max-width: 400px;
+    }
+
+
+    .logo {
+        width: 75px;
     }
 
     main {
@@ -216,15 +222,56 @@ input:focus {
     }
 
     .buttons {
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
 
     .btn {
         width: 100%;
     }
 
+    input {
+        width: 368px;
+    }
+
     #custom {
         width: 100%;
+    }
+
+    .container,
+    .right-section,
+    .left-section {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .second-row {
+        margin: 0.5rem 0;
+    }
+
+    .tip-box,
+    .total-box {
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 300px;
+    }
+
+
+
+    input {
+        width: 264px;
+    }
+
+    h3 {
+        font-size: 0.75rem;
     }
 }

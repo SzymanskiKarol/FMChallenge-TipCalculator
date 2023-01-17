@@ -11,10 +11,6 @@ let tipValue = 0;
 let totalAmount = 0;
 let tipAmount = 0;
 
-
-
-
-
 // DIABLED RESET BUTTON IF BILL EMPTY
 billInput.addEventListener("keyup", () => {
     let isEmpty = false;
@@ -44,30 +40,22 @@ buttons.forEach(button =>
         } else {
             tipValue = parseFloat(document.querySelector(".active").value);
         }
-        tipAmount = (billValue * tipValue / 100) / peopleValue || 0;
-        totalAmount = (billValue / peopleValue) + tipAmount || 0;
-        tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2) || 0;
-        totalPerPerson.innerHTML = "$" + totalAmount.toFixed(2) || 0;
+        renderResult()
     })
 )
 
 
-
-
-// Calculated
-document.addEventListener("keyup", () => {
+function renderResult() {
     tipAmount = (billValue * tipValue / 100) / peopleValue || 0;
     totalAmount = (billValue / peopleValue) + tipAmount || 0;
     tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2) || 0;
     totalPerPerson.innerHTML = "$" + totalAmount.toFixed(2) || 0;
-})
+}
 
-// document.addEventListener("click", () => {
-//     tipAmount = (billValue * tipValue / 100) / peopleValue || 0;
-//     totalAmount = (billValue / peopleValue) + tipAmount || 0;
-//     tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2) || 0;
-//     totalPerPerson.innerHTML = "$" + totalAmount.toFixed(2) || 0;
-// })
+// Calculated
+document.addEventListener("keyup", () => {
+    renderResult()
+})
 
 billInput.addEventListener("input", () => {
     billValue = parseFloat(billInput.value);
@@ -82,18 +70,6 @@ customInput.addEventListener("input", () => {
         tipValue = parseFloat(document.querySelector(".active").value);
     }
 })
-
-// resetBtn.addEventListener("click", () => {
-//     tipPerPerson.innerHTML = "$" + 0.00;
-//     totalPerPerson.innerHTML = "$" + 0.00;
-//     buttons.forEach((button) => {
-//         button.classList.remove("active");
-//     })
-
-//     billInput.value = "";
-//     peopleInput.value = 1;
-//     customInput.value = "";
-// })
 
 function resetAll() {
     resetBtn.setAttribute("disabled", "disabled")
